@@ -1,0 +1,17 @@
+﻿@page "/cascadingvalues"
+
+<CascadingValue Value="Theme">
+    <!-- Se establece el valor compartido y se envuelve el contenido del componente principal -->
+    <div class="@Theme">
+        <!-- Se aplica la clase CSS basada en el valor del tema -->
+        <h1>Componente Principal</h1>
+        <!-- Se incluye el componente secundario dentro del contexto compartido -->
+        <CascadingValuesChild/>
+    </div>
+</CascadingValue>
+
+@code {
+    string Theme = "ligth"; // Se define el valor compartido
+}
+
+

@@ -1,0 +1,10 @@
+﻿@page "/binding"
+
+<h3>Ejemplo de Binding</h3>
+
+<input type="text" @bind="Message" />
+<p>Texto ingresado: @Message</p>
+
+@code {
+    private string Message { get; set; } = "example@gmail.com";
+}

@@ -1,0 +1,10 @@
+﻿<div>
+    <h2>Componente Secundario</h2>
+    <p>El tema actual es: @Theme</p>
+    <!-- Se muestra el valor del tema dentro del componente secundario -->
+</div>
+
+@code {
+    [CascadingParameter]
+    string Theme { get; set; } // Se declara la propiedad para acceder al valor compartido
+}
