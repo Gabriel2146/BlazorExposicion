@@ -1,3 +1,13 @@
 ﻿@page "/"
 
 
+<GenericList Items="@stringList">
+    <ItemTemplate>
+        <!-- Plantilla personalizada para renderizar cada elemento de la lista -->
+        <span>@context</span>
+    </ItemTemplate>
+</GenericList>
+
+@code {
+    List<string> stringList = new List<string> { "Item 1", "Item 2", "Item 3" };
+}

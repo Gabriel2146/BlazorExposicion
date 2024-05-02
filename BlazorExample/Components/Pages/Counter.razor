@@ -17,6 +17,7 @@
 
 @GetRenderFragment(types[selected])
 
+
 @code {
     RenderFragment GetRenderFragment(Type type)
     {
@@ -27,6 +28,7 @@
         };
         return renderFragment;
     }
+
     int selected;
     ComponentBase[] components = { new CascadingValuesExample(), new RenderFragmentExample(), new BindingExample(), new TabControlExample() };
     Type[] types => components.Select(c => c.GetType()).ToArray();

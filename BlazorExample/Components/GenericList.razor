@@ -1,0 +1,27 @@
+﻿<h3>GenericList</h3>
+
+@typeparam T
+
+<ul>
+    @foreach (var item in Items)
+    {
+        <li>@item</li>
+    }
+</ul>
+
+@code {
+    [Parameter]
+    public List<T> Items { get; set; } // Lista de elementos de tipo T
+
+    [Parameter]
+    public RenderFragment<T> ItemTemplate { get; set; } // Plantilla para renderizar cada elemento
+
+    protected override void OnInitialized()
+    {
+        if (ItemTemplate == null)
+        {
+            // Si no se proporciona una plantilla personalizada, se renderizan los elementos de la lista directamente
+            ItemTemplate = item => builder => builder.AddContent(0, item);
+        }
+    }
+}
