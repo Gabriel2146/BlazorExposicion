@@ -2,9 +2,9 @@
 
 @typeparam T
 
-
-
 <button class="btn @ButtonClass" @onclick="OnClick">
+
+    <span>¡Haz clic aquí!</span>
     @ChildContent // Renderizamos el contenido personalizado proporcionado por el usuario
 </button>
 
@@ -17,6 +17,13 @@
 
     [Parameter]
     public RenderFragment<T> ChildContent { get; set; } // Contenido personalizado proporcionado por el usuario
+
+    // Manejador del evento de clic
+    private void HandleClick()
+    {
+        // Lógica de manejo del clic
+        Console.WriteLine("Botón personalizado clicado.");
+    }
 
 }
 
