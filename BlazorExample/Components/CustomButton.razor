@@ -1,0 +1,25 @@
+﻿<h3>CustomButton</h3>
+
+@typeparam T
+
+
+
+<button class="btn @ButtonClass" @onclick="OnClick">
+    @ChildContent // Renderizamos el contenido personalizado proporcionado por el usuario
+</button>
+
+@code {
+    [Parameter]
+    public string ButtonClass { get; set; } = "btn-primary"; // Clase CSS del botón
+
+    [Parameter]
+    public EventCallback OnClick { get; set; } // Evento de clic
+
+    [Parameter]
+    public RenderFragment<T> ChildContent { get; set; } // Contenido personalizado proporcionado por el usuario
+
+}
+
+
+
+
